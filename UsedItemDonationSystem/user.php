@@ -7,14 +7,14 @@
     $phonenum = $_POST['phonenum'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    // $hash = password_hash($pass, PASSWORD_DEFAULT);
+     $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO `user` (name, username, gender, phonenum, email, password) VALUES ('$name', '$username', '$gender','$phonenum', '$email', '$password')" or die ("Error inserting data into table");
+    $sql = "INSERT INTO `user` (name, username, gender, phonenum, email, password) VALUES ('$name', '$username', '$gender','$phonenum', '$email', '$hash')" or die ("Error inserting data into table");
     
     if($conn->query($sql) === TRUE)
     {
         echo "New record created successfuly";
-        echo "<meta http-equiv=\"refresh\" content=\"3;url=index.php\">";
+        echo "<meta http-equiv=\"refresh\" content=\"3;url=login.html\">";
     }
     else
     {
