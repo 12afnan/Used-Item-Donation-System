@@ -62,6 +62,35 @@ body {
     align-items: center;
 }
 
+.header-right button{ /*button add item styling*/
+    border: none;
+    background-color: #FEF1A6;
+    padding: 10px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    border: 2px solid red;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.header-right button:hover{ /*button add item on hover*/
+    color: white;
+    background-color: red;
+    transition-duration: 0.5s;
+    font-style: italic;
+}
+
+.header-right button a{ /*anchor in the add item button */
+    text-decoration: none;
+    color: black;
+}
+
+.header-right button a:hover{ /*anchor in the add item button on hover */
+    color: white;
+}
+
 .header-right img{
     width: 30px;
     height: 30px;
@@ -150,9 +179,9 @@ body {
 /*ITEMS CARDS*/
 
 .cards{
-    margin: 0 auto;
+    margin: 20 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 20px;
     font-family: sans-serif;
 }
