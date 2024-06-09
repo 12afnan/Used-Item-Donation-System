@@ -1,0 +1,174 @@
+.flex{ /* flex */
+    display: flex;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+}
+
+/*HEADER AND FOOTER*/
+@media screen and (max-width: 500px) {
+    .header-right {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+}
+
+#wrapper{ /* body background*/
+    background-image: url("image/doodle.png"); 
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+.header{ /*header box*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100px;
+    background: #FEF1A6;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header img{ /*soy logo*/
+    max-width: 73.43px;
+    transform: rotate(-23.02deg);
+}
+
+.header-right img{ /*user logo*/
+    transform: none;
+}
+
+.header a.logo{ /*Daizu Foundation*/
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 29px;
+    color:black;
+}
+
+.header a.reg, .header a.log{ /**/
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 15px;
+    margin-left: 20px;
+    color: black;
+}
+
+.header-right{
+    display: flex;
+    align-items: center;
+}
+
+.header-right img{
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.footer{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #FEF1A6;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer p{
+    margin: 0;
+    color: black;
+}
+
+.footer a{
+    text-decoration: none;
+    font-size: 15px;
+    margin-right: 20px;
+    color: black;
+}
+
+/*REGISTER FORM POPUP BOX*/
+
+.box{ /* Create account popup box */        
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 44px;
+    background: #F5F5F5;
+    border: 2px solid black;
+    border-radius: 16px;
+}
+
+.soybox{ /* Soy logo in the box*/
+
+    width: 73.54px;
+    height: 74.83px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    background: url(soy.png);
+    border-radius: 103px;
+    transform: matrix(0.92, -0.39, 0.39, 0.92, 0, 0);
+}
+
+.boxtitle{ /*Welcome to Daizu Foundation paragraph*/
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 23px;
+
+    color: black;
+}
+
+.optiontitle{/* Create an account or log in paragraph*/
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    /* identical to box height */
+    color: black;
+}
+
+.mainform{ /*form position*/
+
+    left: 40px;
+    top: 90px;
+}
+
+.font-size{ /*all form label except show password */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: black;
+}
+
+input[type=text],input[type=email],input[type=password],input[type=tel]{ /*textbox sizing etc*/
+    width: 100%;
+    padding: 11px 10px;
+    border: 1px solid black;
+    border-radius: 11px;
+}
+
+textarea{/*comment textbox*/
+    width: 100%;
+    padding: 11px 0px;
+    border: 1px solid black;
+    border-radius: 11px;
+}
+
+input[type=button]{ /*button sizing etc*/
+    width: 32%;
+    padding: 6px 25px;
+    text-align: center;
+    background-color: yellowgreen;
+    border-radius: 17px;
+    cursor: pointer;
+}
+
+input[type=button]:hover{/*button when hover*/
+    box-shadow: 1px 2px 1px black;
+}
+

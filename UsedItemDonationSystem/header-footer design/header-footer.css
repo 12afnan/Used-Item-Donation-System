@@ -1,0 +1,76 @@
+/*HEADER AND FOOTER*/
+@media screen and (max-width: 500px) {
+    .header-right {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+}
+
+.header{ /*header box*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100px;
+    background: #FEF1A6;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header img{ /*soy logo*/
+    max-width: 73.43px;
+    transform: rotate(-23.02deg);
+}
+
+.header-right img{ /*user logo*/
+    transform: none;
+}
+
+.header a.logo{ /*Daizu Foundation*/
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 29px;
+    color:black;
+}
+
+.header a.reg, .header a.log{ /**/
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 15px;
+    margin-left: 20px;
+    color: black;
+}
+
+.header-right{
+    display: flex;
+    align-items: center;
+}
+
+.header-right img{
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.footer{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #FEF1A6;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer p{
+    margin: 0;
+    color: black;
+}
+
+.footer a{
+    text-decoration: none;
+    font-size: 15px;
+    margin-right: 20px;
+    color: black;
+}

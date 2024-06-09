@@ -1,0 +1,206 @@
+.flex{ /* flex */
+    display: flex;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+}
+
+/*HEADER AND FOOTER*/
+@media screen and (max-width: 500px) {
+    .header-right {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+}
+
+#wrapper{ /* body background*/
+    background-image: url("image/doodle.png"); 
+    background-size: contain;
+    background-attachment: fixed;
+}
+
+.header{ /*header box*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100px;
+    background: #FEF1A6;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header img{ /*soy logo*/
+    max-width: 73.43px;
+    transform: rotate(-23.02deg);
+}
+
+.header-right img{ /*user logo*/
+    transform: none;
+}
+
+.header a.logo{ /*Daizu Foundation*/
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 29px;
+    color:black;
+}
+
+.header a.reg, .header a.log{ /**/
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 15px;
+    margin-left: 20px;
+    color: black;
+}
+
+.header-right{
+    display: flex;
+    align-items: center;
+}
+
+.header-right img{
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.footer{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #FEF1A6;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.footer p{
+    margin: 0;
+    color: black;
+}
+
+.footer a{
+    text-decoration: none;
+    font-size: 15px;
+    margin-right: 20px;
+    color: black;
+}
+
+/*2ND LAYER HEADER W/ SEARCH BAR & BUTTON*/
+.topnav{ /*2nd layer*/
+    overflow: hidden;
+    background-color: #E7CD7E;
+}
+
+.topnav .search-container { /*search container*/
+    float: right;
+}
+
+.topnav .search-container form{ /*form container*/
+    display: flex; 
+    align-items: center;
+}
+
+.topnav input[type=search] { /*search bar*/
+    padding: 7px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.topnav .search-container button { /*search button*/
+    padding: 4px 4px;
+    margin-right: 20px;
+    background: white;
+    cursor: pointer;
+}
+
+.topnav .search-container button i{ /*search icon in the button*/
+    width: 25px;
+    height: 21px;
+}
+
+.topnav .search-container button:hover { /*search button when hover*/
+    background: blueviolet;
+}
+
+@media screen and (max-width: 500px) {
+    .topnav .search-container {
+      float: none;
+    }
+     .topnav .search-container button {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 10px;
+    }
+
+    .topnav input[type=search] {
+        width: 100%;
+    }
+}
+
+/*ITEMS CARDS*/
+
+.cards{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    font-family: sans-serif;
+}
+
+.card{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-image{
+    aspect-ratio: 9/16;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.card-content{
+    line-height: 1.5;
+    font-size: 0.9em;
+    padding: 15px;
+    background: #fafafa;
+}
+
+.card-content p{
+    margin-top: 0;
+
+}
+
+.card-info{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #555555;
+    background: yellowgreen;
+    font-size: 0.8em;
+    border-bottom: 2px solid #cccccc;
+}
+
+.card-info i{
+    font-size: 1.5em;
+    margin-right: 8px;
+}
+
+.card-link{
+    color: #64968c;
+    text-decoration: none;
+}
+
+.card-link:hover{
+    text-decoration: underline;
+}
