@@ -32,7 +32,7 @@
         <div id="wrapper">
             <header>
             <div class="header">
-                    <a href="index.html" class="logo flex">
+                    <a href="index.php" class="logo flex">
                         <img src="icon/soy.png" class="soylogo" alt="Daizu Foundation">
                         <div>Daizu<br/>Foundation</div>
                     </a>
