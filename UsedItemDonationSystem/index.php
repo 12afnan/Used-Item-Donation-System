@@ -10,10 +10,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
-    <body>
+    <body id="wrapper">
         <header>
             <div class="header">
-                    <a href="index.html" class="logo flex">
+                    <a href="index.php" class="logo flex">
                         <img src="icon/soy.png" class="soylogo" alt="Daizu Foundation">
                         <div>Daizu<br/>Foundation</div>
                     </a>
@@ -21,8 +21,7 @@
                 <div class="header-right">
                     <a href="register.html" class="reg">Register</a>
                     <a href="log-in.html" class="log">Login</a>
-                    <a href="dashboard.html"><img src="icon/user-icon.png" alt="user-icon">
-</a>
+                    <a href="dashboard.html"><img src="icon/user-icon.png" alt="user-icon"></a>
                 </div>
             </div>
         </header>
@@ -65,9 +64,7 @@
             <?php
         }
         ?>
-        
         </div>
-
 
         <footer>
             <div class="footer">
