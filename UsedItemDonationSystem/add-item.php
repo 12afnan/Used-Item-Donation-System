@@ -32,8 +32,6 @@
                     URL.revokeObjectURL(output.src) // free memory
                 }
             };
-
-  
         </script>
 
     </head>
