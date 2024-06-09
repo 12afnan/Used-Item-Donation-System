@@ -19,7 +19,8 @@
                     </a>
                 
                 <div class="header-right">
-                    <a href="register.html" class="reg">Register</a>
+                    <button><a href="add-item.php">Add Item !</a></button>
+                    <a href="register.php" class="reg">Register</a>
                     <a href="log-in.html" class="log">Login</a>
                     <a href="dashboard.html"><img src="icon/user-icon.png" alt="user-icon"></a>
                 </div>
