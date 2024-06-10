@@ -8,20 +8,6 @@
         <link rel="stylesheet" type="text/css" href="style_forms.css">
         <title>Add item - Daizu Foundation</title>
 
-        <style>
-            aside{
-                width: 30%;
-                padding-left: 15px;
-                margin-left: 15px;
-                font-style: italic;
-                background-color: lightgray;
-            }
-
-            input[type=text]{
-                width: 40%;
-            }
-        </style>
-
         <script>
             var loadImage = function(event) 
             {
@@ -36,6 +22,7 @@
 
     </head>
 <body>
+    <div id="wrapper">
         <header>
             <div class="header">
                     <a href="index.php" class="logo flex">
@@ -51,44 +38,51 @@
             </div>
             </header>
 
-            <h3>Add your item : </h3>
-            <aside>
-                <form action="insert.php" method="post" enctype="multipart/form-data">
+            <div class="box">
+                <div class="flex">
+                    <div>
+                        <p class="boxtitle">Donate Your Item</p>
+                    </div>
+                </div>
+                
+                <div class="mainform">
+                    <div class="font-size">
+                        <form action="insert.php" method="post" enctype="multipart/form-data">
+                            <input name="item_image" type="file" accept="image/*" id="imgIn" onchange="loadImage(event)">
+                            <img id="imgOut" alt="Your image" style="width:50%; height:50%;">
                     
-                    <input name="item_image" type="file" accept="image/*" id="imgIn" onchange="loadImage(event)" required>
-                    <img id="imgOut" alt="Your image">
+                            <p><label for="itemName">Item Name : </label>
+                                <input name="item_name" type="text" id="itemName" required></p>
+        
+                            <p><label for="itemCat">Category : </label>
+                                <input name="category" type="text" id="itemCat" list="categoryList" required>
+                            <datalist id="categoryList">
+                                <option value="Hobby, toys & activities">
+                                <option value="Computers & games">
+                                <option value="Home & Furniture">
+                                <option value="Electronics">
+                                <option value="Fashion">
+                                <option value="Entertainment">
+                                <option value="Vehicles">
+                            </datalist></p>
+        
+                            <p><label for="itemCond">Condition : </label>
+                                <input name="condition" type="text" id="itemCond" list="conditionList" required>
+                            <datalist id="conditionList">
+                                <option value="Brand new">
+                                    <option value="Like new">
+                                    <option value="Lightly used">
+                                    <option value="Well used">
+                                    <option value="Heavily used">
+                            </datalist></p>
             
-                    <p><label for="itemName">Item Name : </label>
-                        <input name="item_name" type="text" id="itemName" required></p>
-
-                    <p><label for="itemCat">Category : </label>
-                    <input name="category" type="text" id="itemCat" list="categoryList" required>
-                    <datalist id="categoryList">
-                        <option value="Hobby, toys & activities">
-                        <option value="Computers & games">
-                        <option value="Home & Furniture">
-                        <option value="Electronics">
-                        <option value="Fashion">
-                        <option value="Entertainment">
-                        <option value="Vehicles">
-                    </datalist></p>
-
-                    <p><label for="itemCond">Condition : </label>
-                        <input name="condition" type="text" id="itemCond" list="conditionList" required>
-                    <datalist id="conditionList">
-                        <option value="Brand new">
-                            <option value="Like new">
-                            <option value="Lightly used">
-                            <option value="Well used">
-                            <option value="Heavily used">
-                    </datalist></p>
-    
-                    <p><label for="itemDesc">Description : </label>
-                        <textarea name="description" name="Description" id="itemDesc" required></textarea></p>
-                        
-                    <p><button name="insert" type="submit">Submit</button></p>
-                </form>
-            </aside>
+                            <p><label for="itemDesc">Description : </label>
+                                <textarea name="description" name="Description" id="itemDesc"></textarea></p>
+                    </div>
+                        <p><button name="insert" type="submit">Submit</button></p>
+                        </form>
+                </div>
+            </div>
 
             <footer>
                 <div class="footer">
@@ -102,6 +96,6 @@
                     </div>
                 </div>
                 </footer>
-    
+    </div>
     </body>
 </html>
