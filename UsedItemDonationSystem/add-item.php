@@ -1,5 +1,12 @@
 <?php
     include("connect.php");
+    session_start();
+    // Check if user is logged in
+    if (!isset($_SESSION['user_id'])) 
+    {
+        header("Location: log-in.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +38,8 @@
                     </a>
                 
                 <div class="header-right">
-                    <a href="register.html" class="reg">Register</a>
-                    <a href="log-in.html" class="log">Login</a>
+                    <a href="register.php" class="reg">Register</a>
+                    <a href="log-in.php" class="log">Login</a>
                     <img src="icon/user-icon.png" alt="user-icon">
                 </div>
             </div>
