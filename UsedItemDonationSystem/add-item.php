@@ -4,7 +4,8 @@
     // Check if user is logged in
     if (!isset($_SESSION['user_id'])) 
     {
-        header("Location: log-in.php");
+        echo "<script>alert('Please log in first');</script>";
+        echo "<meta http-equiv=\"refresh\" content=\"0;url=log-in.php\">"; // Redirect to log-in.php
         exit();
     }
 ?>
