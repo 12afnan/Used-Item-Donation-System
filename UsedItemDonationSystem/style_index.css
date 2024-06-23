@@ -233,3 +233,77 @@ body {
 .card-link:hover{
     text-decoration: underline;
 }
+
+/*Item-description*/
+
+.container-item{
+    background: transparent;
+    padding: 15px 9%;
+    padding-bottom: 100px;
+}
+
+.card-item {
+    background: #EEE1BF;
+    border-radius: 5px;
+    padding: 30px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 100px;
+}
+
+.card-item .heading{
+    text-align: left;
+    padding-bottom: 5px;
+    color: #000000;
+    font-size: 50px;
+}
+
+.profile {
+    display: flex;
+    gap: 20px;
+}
+
+.profile .image{
+    width:400px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.profile .text{
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    display:inline;
+    font-size: 30px;
+}
+
+.profile .bttn{
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}
+
+.profile .bttn:hover {
+    background-color: red;
+    box-shadow: 0px 15px 20px rgba(229, 104, 46, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+.profile .bttn:active {
+    transform: translateY(-1px);
+  }
+
+.profile .tengah {
+    text-align: center;
+    padding-top: 20px;
+}
