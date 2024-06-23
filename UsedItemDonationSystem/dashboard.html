@@ -3,93 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_index.css">
+    <link rel="stylesheet" href="style_dashboard.css">
     <title>My Dashboard</title>
-    <style>
-        *{
-            font-family: 'Poppins', sans-serif;
-            margin:0; padding:0;
-            box-sizing: border-box;
-            outline: none;  border:none;
-            text-decoration: none;
-            text-transform: capitalize;
-            transition: .2s linear;
-        }
-        
-        .container{
-            background: transparent;
-            padding: 15px 9%;
-            padding-bottom: 100px;
-        }
-        
-        .container .heading{
-            text-align: left;
-            padding-bottom: 15px;
-            color: #000000;
-            font-size: 50px;
-        }
-        
-        .card {
-            background: #EEE1BF;
-            border-radius: 5px;
-            padding: 30px 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 100px;
-        }
-        
-        .profile {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .container .box-container {
-            display: grid;
-            grid-template-columns: repeat(2 , minmax(270px, 1fr));
-            gap: 15px;
-        }
-        
-        .container .box-container .box{
-            box-shadow: 0 5px 10px rgba(0,0,0,2);
-            border-radius: 5px;
-            background: #FFFFFF;
-            text-align: center;
-            padding: 30px 20px;
-        }
-        
-        .container .box-container .box img{
-            height: 80px;
-        }
-        
-        .container .box-container .box h3{
-            color: #444;
-            font-size: 22px;
-            padding: 10px 0;
-        }
-        
-        .container .box-container .box:hover{
-            box-shadow: 0 10px 15px rgba(0,0,0,3);
-            transform: scale(1.02);
-        }
-        
-        .bttn {
-            cursor: pointer;
-            transition: 400ms;
-            letter-spacing: 1px;
-        }
-        
-        .click {
-            color:#0085FF;
-        }
-        
-        .content  {
-            padding-top: 10px;
-        }
-        
-        .tengah {
-            text-align: center;
-            padding-top: 20px;
-        }
-    </style>
+
 </head>
 <body id="wrapper">
     <header>
@@ -126,31 +42,39 @@
     
         <div class="box-container">
             <div class="bttn">
+                <a href="like-page.html">
             <div class="box">
                 <img id="myImage" src="icon/dashboard/loves.png" style="width: 80px;">
                 <h3>My Likes</h3>
             </div>
+                </a>
         </div>
     
             <div class="bttn">
+                <a href="donate-page.html">
             <div class="box">
                 <img id="myImage" src="icon/dashboard/donate.png" style="width: 80px;">
                 <h3>Donate Item</h3>
             </div>
+                </a>
         </div>
     
             <div class="bttn">
+                <a href="save-page.html">
             <div class="box">
                 <img id="myImage" src="icon/dashboard/save.png" style="width: 80px;">
                 <h3>My Save</h3>
             </div>
+                </a>
         </div>
     
             <div class="bttn">
+                <a href="book-page.html">
             <div class="box">
                 <img id="myImage" src="icon/dashboard/booking.png" style="width: 80px;">
                 <h3>Booking Item</h3>
             </div>
+                </a>
         </div>
     
         </div>
