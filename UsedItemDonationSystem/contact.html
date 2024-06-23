@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style_forms.css">
     <title>Daizu Foundation - Contact Us</title>
 </head>
@@ -8,62 +10,65 @@
 <body>
     <div id="wrapper">
         <header>
-        <div class="header">    
-            <a href="index.php" class="logo flex">
-                <img src="icon/soy.png" class="soylogo" alt="Daizu Foundation">
-                <div>Daizu<br/>Foundation</div>
-            </a>
-            <div class="header-right">
-                <a href="register.html" class="reg">Register</a>
-                <a href="log-in.html" class="log">Login</a>
-                <img src="icon/user-icon.png" alt="user-icon">
+            <div class="header">    
+                <a href="index.php" class="logo flex">
+                    <img src="icon/soy.png" class="soylogo" alt="Daizu Foundation">
+                    <div>Daizu<br/>Foundation</div>
+                </a>
+                <div class="header-right">
+                    <a href="register.php" class="reg">Register</a>
+                    <a href="log-in.php" class="log">Login</a>
+                    <img src="icon/user-icon.png" alt="user-icon">
+                </div>
             </div>
-        </div>
         </header>
 
         <div class="box">
-        <div class="flex">
-            <div>
-                <p class="boxtitle">Contact Us</p>
-                <p class="optiontitle">This contact form is only for general</p>
+            <div class="flex">
+                <div>
+                    <p class="boxtitle">Contact Us</p>
+                    <p class="optiontitle">This contact form is only for general inquiries.</p>
+                </div>
+                <img class="soybox" src="icon/soy.png" alt="Soy Logo">
             </div>
-            <img class="soybox"  src="icon/soy.png" alt="Soy Logo">
-        </div>
-        
-        <div class="mainform">
-            <div class="font-size">
-                <form action="" method="post">
-                    
-                    <p><label for="name">Name* </label> <br>
-                        <input type="text" id="name" required></p>
+            
+            <div class="mainform">
+                <div class="font-size">
+                    <form action="sendemail.php" method="post">
+                        
+                        <p><label for="name">Name* </label> <br>
+                            <input type="text" id="name" name="name" required></p>
 
-                    <p><label for="email">Email* </label> <br>
-                        <input type="email" id="email" required></p>
+                        <p><label for="email">Email* </label> <br>
+                            <input type="email" id="email" name="email" required></p>
 
-                    <p><label for="phoneno">Contact Number (optional)</label> <br>
-                    <input type="tel" id="phoneno"></p>
+                        <p><label for="phoneno">Contact Number (optional)</label> <br>
+                        <input type="tel" id="phoneno" name="phoneno"></p>
 
-                    <p><label for="comment">Comment or Message</label> <br>
-                    <textarea required="required" name="comment" id="comment" rows="5"></textarea></p>
-  
+                        <p><label for="subject">Subject* </label> <br>
+                            <input type="text" id="subject" name="subject" required></p>
+
+                        <p><label for="message">Comment or Message</label> <br>
+                        <textarea name="message" id="message" rows="5" required></textarea></p>
+                
+                </div>
+
+                        <p><input type="submit" id="submit" name="send" value="Submit"></p>
+                    </form>
             </div>
-
-                    <p><input type="button" id="submit" value="Submit"></p>
-                </form>
-        </div>
         </div>
 
         <footer>
-        <div class="footer">
-            <div class="footer-left">
-                <a href="contact.html">Contact</a>
-                <a href="about-us.html">About Us</a>
-            </div>
+            <div class="footer">
+                <div class="footer-left">
+                    <a href="contact.html">Contact</a>
+                    <a href="about-us.html">About Us</a>
+                </div>
 
-            <div class="footer-right">
-                <p>© 2024 Daizu Foundation.</p>
+                <div class="footer-right">
+                    <p>© 2024 Daizu Foundation.</p>
+                </div>
             </div>
-        </div>
         </footer>
     </div>
 </body>
