@@ -81,6 +81,7 @@ if (isset($_GET['id'])) {
                     <p>Description : <?php echo $item['description']; ?></p>
 
                     <?php echo "<a href='edit-donated.php?id=" . $item['item_id'] . "'><button class='bttn'>Edit</button></a>"?>
+                    <?php echo "<a href='applied-items.php?id=" . $item['item_id'] . "'><button class='bttn'>Application</button></a>"?>
             </div>
         </div>
 
