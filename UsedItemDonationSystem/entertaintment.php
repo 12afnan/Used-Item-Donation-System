@@ -44,6 +44,7 @@
 
         <div class="topnav">
             <div class="categories">
+                <a href="index.php">All</a>
                 <a href="hobby.php">Hobby, toys & activities</a>
                 <a href="computers.php">Computers & games</a>
                 <a href="furniture.php">Home & Furniture</a>
