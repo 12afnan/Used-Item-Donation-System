@@ -1,3 +1,7 @@
+<?php
+include('connect.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,46 +27,35 @@
         </div>
     </header>
 
-
     <div class="container">
         <div class="card">
             <h1 class="heading">Donate Item</h1>
             <div class="delete">
-                <p><a href ="#" class="click"> Edit Donate</a></p>
+                <p><a href ="#" class="click"> Edit Booking</a></p>
             </div>
     
-            <div class="box-container">
-                <div class="bttn">
-                    <div class="box">
-                        <img id="myImage" src="icon/dashboard/loves.png" style="width: 80px;">
-                        <h3>Item 1</h3>
-                    </div>
+        <?php
+            $query = "SELECT * FROM `items`";
+            $query_run = mysqli_query($conn, $query);
+            echo "<div class=\"box-container\">";
+            while ($row = mysqli_fetch_array($query_run)) {
+        ?>
+            <div class="bttn">
+            <a href="new-desc.php?id=<?php echo $row['item_id']; ?>">
+                <div class="box">
+                <?php echo '<img src="data:image;base64,' . base64_encode($row['item_image']) . '" class="card-image">'; ?>
+                    <p><?php echo $row['item_name']; ?></p>
+                <div class="card-info">
                 </div>
-    
-                <div class="bttn">
-                    <div class="box">
-                        <img id="myImage" src="icon/dashboard/donate.png" style="width: 80px;">
-                        <h3>Item 2</h3>
-                    </div>
-                </div>
-    
-                <div class="bttn">
-                    <div class="box">
-                        <img id="myImage" src="icon/dashboard/save.png" style="width: 80px;">
-                        <h3>Item 3</h3>
-                    </div>
-                </div>
-    
-                <div class="bttn">
-                    <div class="box">
-                        <img id="myImage" src="icon/dashboard/booking.png" style="width: 80px;">
-                        <h3>Item 4</h3>
-                    </div>
-                </div>
+            </a>
             </div>
         </div>
+        <?php
+                }
+            echo "</div>";
+        ?>
     </div>
-    
+</div>
 
     <footer>
         <div class="footer">
