@@ -64,7 +64,6 @@
      
                 </div>
                 <p><label><input type="checkbox" value="Show Password" onclick="showPassword()">Show Password</label></p>
-                        <p><a href="reset.html">Forgot password?</a></p>
                         <p><button type="submit" id="button" value="Log In">Log In</p>
                     </form>
             </div>
