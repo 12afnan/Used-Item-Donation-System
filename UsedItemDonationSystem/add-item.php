@@ -1,15 +1,15 @@
 <?php
     include("connect.php");
     session_start();
-    // Check if user is logged in
-    if (!isset($_SESSION['user_id'])) 
+    
+    if (!isset($_SESSION['user_id']) || !isset($_SESSION['username'])) 
     {
         echo "<script>alert('Please log in first');</script>";
         echo "<meta http-equiv=\"refresh\" content=\"0;url=log-in.php\">"; // Redirect to log-in.php
         exit();
     }
 ?>
-
+<style><?php include ('style_forms.css') ?></style>
 <!DOCTYPE html>
 <html>
     <head>
@@ -37,11 +37,26 @@
                         <img src="icon/soy.png" class="soylogo" alt="Daizu Foundation">
                         <div>Daizu<br/>Foundation</div>
                     </a>
-                
+                    <article>Used Item Donation System</article>
+
                 <div class="header-right">
-                    <a href="register.php" class="reg">Register</a>
-                    <a href="log-in.php" class="log">Login</a>
-                    <img src="icon/user-icon.png" alt="user-icon">
+                <?php 
+                    if (isset($_SESSION['username']))
+                    {
+                        echo $_SESSION['username']; 
+                        ?>
+                        <?php
+                    }
+                    else if ((isset($_SESSION['username'])) == FALSE)
+                    { ?>
+                        <a href="register.php" class="reg">Register</a>
+                        <a href="log-in.php" class="log">Login</a>
+                        <?php
+                    } 
+                    ?>
+
+                    <a href="dashboard.php"><img src="icon/user-icon.png" alt="user-icon"></a>
+
                 </div>
             </div>
             </header>
