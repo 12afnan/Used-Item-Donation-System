@@ -7,6 +7,10 @@ body {
     margin: 0;
 }
 
+.center{
+    text-align: center;
+}
+
 /*HEADER AND FOOTER*/
 @media screen and (max-width: 500px) {
     .header-right {
@@ -125,6 +129,21 @@ body {
     background-color: #E7CD7E;
 }
 
+.categories{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.categories a{
+    color: black;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.categories a:hover{
+    color: white;
+}
+
 .topnav .search-container { /*search container*/
     float: right;
 }
@@ -137,8 +156,7 @@ body {
 .topnav input[type=search] { /*search bar*/
     padding: 7px;
     border: none;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    /*margin-top: 10px;*/
     font-size: 15px;
 }
 
@@ -156,6 +174,10 @@ body {
 
 .topnav .search-container button:hover { /*search button when hover*/
     background: blueviolet;
+}
+
+h2{
+    padding-left: 20px;
 }
 
 @media screen and (max-width: 500px) {
@@ -183,11 +205,13 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 20px;
-    font-family: sans-serif;
+    
 }
 
 .card{
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .card-image{
@@ -206,7 +230,8 @@ body {
 
 .card-content p{
     margin-top: 0;
-
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
 }
 
 .card-info{
@@ -225,85 +250,201 @@ body {
     margin-right: 8px;
 }
 
-.card-link{
-    color: #64968c;
-    text-decoration: none;
-}
-
-.card-link:hover{
-    text-decoration: underline;
-}
-
-/*Item-description*/
-
-.container-item{
-    background: transparent;
-    padding: 15px 9%;
-    padding-bottom: 100px;
-}
-
-.card-item {
-    background: #EEE1BF;
-    border-radius: 5px;
-    padding: 30px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 100px;
-}
-
-.card-item .heading{
-    text-align: left;
-    padding-bottom: 5px;
-    color: #000000;
-    font-size: 50px;
-}
-
-.profile {
-    display: flex;
-    gap: 20px;
-}
-
-.profile .image{
-    width:400px;
-    height: 500px;
-    object-fit: cover;
-}
-
-.profile .text{
-    text-transform: uppercase;
-    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-    display:inline;
-    font-size: 30px;
-}
-
-.profile .bttn{
-    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
-    padding: 1.3em 3em;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-weight: 500;
-    color: #000;
-    background-color: #fff;
-    border: none;
-    border-radius: 45px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
-}
-
-.profile .bttn:hover {
+.card-link button{
+    font-size: 100%;
+    color: white;
     background-color: red;
-    box-shadow: 0px 15px 20px rgba(229, 104, 46, 0.4);
-    color: #fff;
-    transform: translateY(-7px);
-  }
-  
-.profile .bttn:active {
-    transform: translateY(-1px);
-  }
+    cursor: crosshair;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+}
 
-.profile .tengah {
+/*dashboard page*/
+
+        .container{
+            padding: 15px 9%;
+            padding-bottom: 100px;
+        }
+        
+        .container .heading{
+            text-align: left;
+            padding-bottom: 15px;
+            color: #000000;
+            font-size: 50px;
+        }
+        
+        .square {
+            background: #E7CD7E;
+            border-radius: 10px;
+            padding: 30px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 5px;
+        }
+        
+        .profile {
+            text-align: center;
+            background-color: goldenrod;
+            display: flex;
+            gap: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0,0,0,2);
+            margin-bottom: 20px;
+
+        }
+        
+        .container .box-container {
+            display: grid;
+            grid-template-columns: repeat(2 , minmax(270px, 1fr));
+            gap: 15px;
+        }
+        
+        .container .box-container .box{
+            box-shadow: 0 5px 10px rgba(0,0,0,2);
+            border-radius: 10px;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .container .box-container .box img{
+            height: 80px;
+        }
+        
+        .container .box-container .box h3{
+            color: #444;
+            font-size: 22px;
+            padding: 10px 0;
+        }
+        
+        .container .box-container .box:hover{
+            box-shadow: 0 10px 15px rgba(0,0,0,3);
+            transform: scale(1.02);
+        }
+        
+        .bttn {
+            cursor: pointer;
+            transition: 400ms;
+            letter-spacing: 1px;
+        }
+        
+        .content  {
+            padding-top: 10px;
+            text-align: center;
+        }
+
+        .content a button.edit{ /*edit profile button*/
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 6px 25px;
+            text-align: center;
+            border-radius: 15px;
+            cursor: pointer;
+            border: none;
+            background-color: yellowgreen;
+        }
+
+        .content a button.logout{ /*log out button*/
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 6px 25px;
+            text-align: center;
+            border-radius: 15px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            background-color: red;
+        }
+
+        .content a button:hover{
+            box-shadow: 1px 2px 1px black;
+
+        }
+
+        .content  table{
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            border:1px;
+            width:200%;
+        }
+        
+        .tengah {
+            text-align: center;
+            padding-top: 20px;
+        }
+
+
+
+.box{ /* Create account popup box */        
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 44px;
+    background: #F5F5F5;
+    border: 2px solid black;
+    border-radius: 16px;
+}
+
+.soybox{ /* Soy logo in the box*/
+
+    width: 73.54px;
+    height: 74.83px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    background: url(soy.png);
+    border-radius: 103px;
+    transform: matrix(0.92, -0.39, 0.39, 0.92, 0, 0);
+}
+
+.boxtitle{ /*Welcome to Daizu Foundation paragraph*/
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 23px;
+
+    color: black;
+}
+
+.optiontitle{/* Create an account or log in paragraph*/
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    /* identical to box height */
+    color: black;
+}
+
+.mainform{ /*form position*/
+
+    left: 40px;
+    top: 90px;
+}
+
+.font-size{ /*all form label except show password */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    color: black;
+}
+
+input[type=text],input[type=email],input[type=password],input[type=tel]{ /*textbox sizing etc*/
+    width: 100%;
+    padding: 11px 10px;
+    border: 1px solid black;
+    border-radius: 11px;
+}
+
+p button{
+    width: 30%;
+    padding: 6px 25px;
     text-align: center;
-    padding-top: 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+    background-color: yellowgreen;
+}
+
+p button:hover{
+    box-shadow: 1px 2px 1px black;
 }
