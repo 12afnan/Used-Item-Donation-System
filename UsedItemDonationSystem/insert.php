@@ -1,5 +1,6 @@
 <?php
     include("connect.php"); // Include the database connection file
+    session_start();
 
     // Get form inputs
     $name = $_POST['item_name']; // Retrieve item name
@@ -14,19 +15,21 @@
         $image_data = file_get_contents($image_tmp_name); // Read image data from the temporary file
 
         // Insert data into the database (assuming 'item_image' column is of type BLOB)
-        $sql = "INSERT INTO `items` (`item_image`, `item_name`, `category`, `condition`, `description`) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO `items` (`item_image`, `item_name`, `category`, `condition`, `description`, `user_id`) VALUES (?, ?, ?, ?, ?, ?)";
 
         $stmt = $conn->prepare($sql); // Prepare the SQL statement
-        $stmt->bind_param("sssss", $image_data, $name, $category, $condition, $description); // Bind parameters
+        $stmt->bind_param("sssssi", $image_data, $name, $category, $condition, $description, $_SESSION['user_id']); // Bind parameters
 
         if ($stmt->execute()) 
         {
             echo "<script>alert('Item added successfully');</script>"; // Display success message
-            echo "<meta http-equiv=\"refresh\" content=\"1;url=index.php\">"; // Redirect to index.php
+            echo "<meta http-equiv=\"refresh\" content=\"0;url=add-item.php\">"; // Redirect to index.php
         } 
         else 
         {
             echo "Error inserting data into the database."; // Display error message
+            echo "<meta http-equiv=\"refresh\" content=\"0;url=add-item.php\">";
+
         }
     } 
 ?>
