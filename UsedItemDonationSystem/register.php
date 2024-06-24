@@ -1,6 +1,7 @@
 <?php
     include("connect.php");
 ?>
+<style><?php include ('style_forms.css') ?></style>
 
 <!DOCTYPE html>
 <html>
@@ -36,10 +37,9 @@
                         <img src="icon/soy.png" class="soylogo" alt="Daizu Foundation">
                         <div>Daizu<br/>Foundation</div>
                     </a>
-                
+                    <article>Used Item Donation System</article>
+
                 <div class="header-right">
-                    <a href="register.php" class="reg">Register</a>
-                    <a href="log-in.html" class="log">Login</a>
                     <img src="icon/user-icon.png" alt="user-icon">
                 </div>
             </div>
@@ -49,7 +49,7 @@
                 <div class="flex">
                     <div>
                         <p class="boxtitle">First time here ?</p>
-                        <p class="optiontitle">Create an account or <a href="log-in.html"> log in</a></p>
+                        <p class="optiontitle">Create an account or <a href="log-in.php"> log in</a></p>
                     </div>
                     <img class="soybox"  src="icon/soy.png" alt="Soy Logo">
                 </div>
@@ -74,7 +74,6 @@
                             <p><label for="email">Email </label> <br>
                                 <input type="email" id="email" name="email" required></p>
 
-                                
                             <p><label for="password">Password </label> <br>
                                 <input type="password" id="inputPassword" name="password" required></p>
 
