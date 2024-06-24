@@ -5,10 +5,22 @@ include('connect.php');
 if (isset($_GET['id'])) {
     $item_id = $_GET['id'];
 
-    // Fetch item details from the database
-    $query = "SELECT * FROM `items` WHERE `item_id` = $item_id";
+    // Fetch item details and user phone number from the database
+    $query = "SELECT items.*, user.phonenum FROM `items` 
+              JOIN `user` ON items.user_id = user.user_id 
+              WHERE `item_id` = $item_id";
     $query_run = mysqli_query($conn, $query);
-    $item = mysqli_fetch_assoc($query_run);
+
+    if ($query_run) {
+        $item = mysqli_fetch_assoc($query_run);
+        if (!$item) {
+            echo "Item not found.";
+            exit();
+        }
+    } else {
+        echo "Error executing query.";
+        exit();
+    }
 } else {
     echo "Item ID not set.";
     exit();
@@ -23,7 +35,6 @@ if (isset($_GET['id'])) {
     <title>Item Description</title>
     <link rel="stylesheet" type="text/css" href="style_index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 <body id="wrapper">
     <header>
@@ -69,7 +80,12 @@ if (isset($_GET['id'])) {
                 <p>Condition: <?php echo $item['condition']; ?></p>
                 <p>Description: <?php echo $item['description']; ?></p>
                 <div class="tengah">
-                    <a><button class="bttn">Apply</button></a>
+                    <a href="https://wa.me/6<?php echo $item['phonenum']; ?>" target="_blank">
+                        <button class="bttn">WhatsApp</button>
+                    </a>
+                    <a href="tel:<?php echo $item['phonenum']; ?>">
+                        <button class="bttn">Call</button>
+                    </a>
                 </div>
             </div>
             </div>
