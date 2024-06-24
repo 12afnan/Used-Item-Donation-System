@@ -26,20 +26,40 @@ if (isset($_GET['id'])) {
 
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validate and sanitize inputs (not shown here for brevity)
+    // Update action
+    if (isset($_POST['update'])) {
+        // Validate and sanitize inputs (not shown here for brevity)
 
-    // Prepare update query
-    $update_query = "UPDATE `items` SET `item_name`=?, `category`=?, `condition`=?, `description`=? WHERE `item_id`=?";
-    $stmt = mysqli_prepare($conn, $update_query);
-    mysqli_stmt_bind_param($stmt, 'ssssi', $_POST['item_name'], $_POST['category'], $_POST['condition'], $_POST['description'], $_POST['item_id']);
+        // Prepare update query
+        $update_query = "UPDATE `items` SET `item_name`=?, `category`=?, `condition`=?, `description`=? WHERE `item_id`=?";
+        $stmt = mysqli_prepare($conn, $update_query);
+        mysqli_stmt_bind_param($stmt, 'ssssi', $_POST['item_name'], $_POST['category'], $_POST['condition'], $_POST['description'], $_POST['item_id']);
 
-    // Execute query
-    if (mysqli_stmt_execute($stmt)) {
-        // Redirect to a success page or item list
-        header("Location: new-desc.php");
-        exit();
-    } else {
-        echo "Error updating item: " . mysqli_error($conn);
+        // Execute query
+        if (mysqli_stmt_execute($stmt)) {
+            // Redirect to a success page or item list
+            header("Location: new-desc.php?id=" . $item_id);   
+            exit();
+        } else {
+            echo "Error updating item: " . mysqli_error($conn);
+        }
+    }
+
+    // Delete action
+    if (isset($_POST['delete'])) {
+        // Prepare delete query
+        $delete_query = "DELETE FROM `items` WHERE `item_id`=?";
+        $stmt = mysqli_prepare($conn, $delete_query);
+        mysqli_stmt_bind_param($stmt, 'i', $_POST['item_id']);
+
+        // Execute delete query
+        if (mysqli_stmt_execute($stmt)) {
+            // Redirect to a success page or item list
+            header("Location: donate-page.php");
+            exit();
+        } else {
+            echo "Error deleting item: " . mysqli_error($conn);
+        }
     }
 }
 ?>
@@ -94,8 +114,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <form action="" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="item_id" value="<?php echo $item['item_id']; ?>">
                     
-                    <label for="item_image">Item Image</label><br>
-                    <input name="item_image" type="file" accept="image/*" id="imgIn" onchange="loadImage(event)">
                     <img id="imgOut" src="data:image;base64,<?php echo base64_encode($item['item_image']); ?>" alt="Item Image" style="width:50%; height:50%;"><br><br>
 
                     <label for="item_name">Name</label><br>
@@ -126,6 +144,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <textarea name="description" rows="4" cols="50"><?php echo htmlspecialchars($item['description']); ?></textarea><br><br>
 
                     <button name="update" type="submit">Update</button>
+
+                    <button name="delete" type="submit" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
                 </form>
             </div>
         </div>
